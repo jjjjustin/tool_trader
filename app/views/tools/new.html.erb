@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= simple_form_for([current_user, @reminder]) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.select :priority, ['high' ,'urgent','normal','low'], prompt: "Select priority level" %>
+
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

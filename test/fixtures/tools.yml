@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  model: MyString
+  condition: MyString
+  point_cost: 1
+  availability: 
+
+two:
+  type: 
+  model: MyString
+  condition: MyString
+  point_cost: 1
+  availability: 

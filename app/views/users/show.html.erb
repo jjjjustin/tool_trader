@@ -1,0 +1,20 @@
+<h1>Show page</h1>
+
+
+
+
+<h2> | <em>Toolbox for</em> |</h2>
+<h1><%= current_user.user_name %></h1>
+<hr>
+
+<ul class="users">
+  <% @tools.each do |tool| %>
+    <li>
+      <strong> Type |   <%= tool.type %><strong> <br>
+      <strong> Model |   <%= tool.model %><strong> <br>
+      <strong> Condition |   <%= tool.condition %><strong>
+      <strong> Price |   <%= tool.point_cost %><strong> <br>
+      <strong> Availability |   <%= tool.availability %><strong> <br>
+    </li>
+  <% end %>
+</ul>
