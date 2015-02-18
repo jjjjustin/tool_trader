@@ -21,8 +21,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-            <li><%= link_to "Logged in as #{current_user.user_name}" %></li>
-            <li><%= link_to 'Add to your toolbox', new_user_tool_path(:user_id) %></li>
+            <li><%= link_to "Logged in as #{current_user.user_name.upcase}", user_path(current_user.id) %></li>
+            <li><%= link_to 'Add to your toolbox', new_user_tool_path(current_user.id) %></li>
+            <li><%= link_to 'Browse', user_tools_path(current_user.id) %></li>
             <li><%= link_to 'Log out', destroy_user_session_path(@user), method: :delete %></li>
             <% end %>
             <li><%= link_to 'Sign up now!', new_user_registration_path %></li>
@@ -32,14 +33,22 @@
       </div>
     </div>
     <div class='row'>
-      <div class='col-md-3'>
+      <div class='col-md-2'>
+
       </div>
-      <div class='col-md-6'>
-        <br>
-        <%= yield %>
+      <div class='col-md-1'>
       </div>
+        <div class='col-md-6'>
+          <br>
+          <%= yield %>
+        </div>
       <div class='col-md-3'>
       </div>
     </div>
+    <footer class="row">
+    <div class="large-12 columns">
+      <hr> <p>© Tool Trader Inc.  2015</p>
+    </div>
+  </footer>
   </body>
 </html>

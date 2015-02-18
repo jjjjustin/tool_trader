@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
     <%= simple_form_for([current_user, @tool]) do |f| %>
       <%= f.select :tool_type, ['Power saw', 'Power drill', 'Hand tool', 'MIG welder', 'Other'],
                                prompt: "Select type of tool" %>

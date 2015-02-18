@@ -1,39 +1,29 @@
-
-
-
-
-<% @tool.each do |tool| %>
+<% @tools.each do |tool| %>
   <ul class="list-group">
     <h2><%= tool.tool_model.upcase %></h2>
       <li class="list-group-item">
-        <div class="panel panel-default">
-          <div class="panel-heading">Category</div>
-          <div class="panel-body"><%= tool.tool_type %></div>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><span class="badge"><%= tool.tool_type %></span>Type</li>
+        </ul>
+      <li class="list-group-item">
+        <ul class="list-group">
+          <li class="list-group-item"><span class="badge"><%= tool.tool_model %></span>Model</li>
+        </ul>
       </li>
       <li class="list-group-item">
-        <div class="panel panel-default">
-          <div class="panel-heading">Model</div>
-          <div class="panel-body"><%= tool.tool_model %></div>
-        </div>
+         <ul class="list-group">
+          <li class="list-group-item"><span class="badge"><%= tool.condition %></span>Condition</li>
+        </ul>
       </li>
       <li class="list-group-item">
-         <div class="panel panel-default">
-          <div class="panel-heading">Condition</div>
-          <div class="panel-body"><%= tool.condition %></div>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><span class="badge"><%= tool.point_cost %> points</span>Price</li>
+        </ul>
       </li>
       <li class="list-group-item">
-        <div class="panel panel-default">
-          <div class="panel-heading">Price</div>
-          <div class="panel-body"><%= tool.point_cost %> points</div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="panel panel-default">
-          <div class="panel-heading">Available?</div>
-          <div class="panel-body"><%= "Yes" if tool.availability == true %></div>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><span class="badge"><%= "Yes" if tool.availability == true %></span>Available?</li>
+        </ul>
       </li>
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
     <div class="btn-group" role="group">

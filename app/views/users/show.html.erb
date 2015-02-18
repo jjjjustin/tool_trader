@@ -1,20 +1,19 @@
-<h1>Show page</h1>
+<h1><em>Profile for</em> <%= current_user.user_name.upcase %></h1>
+    <ul class="list-group">
+      <li class="list-group-item"><span class="badge"><%= current_user.points %></span>Trade Points available</li>
+    </ul>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">
+      <%= link_to "Add tool", new_user_tool_path(current_user.id) %></button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">
+        <%= link_to "Log out", destroy_user_session_path(@user), method: :delete %></button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">
+        <%= link_to "Browse", user_tools_path(current_user.id) %></button>
+    </div>
 
 
 
-
-<h2> | <em>Toolbox for</em> |</h2>
-<h1><%= current_user.user_name %></h1>
-<hr>
-
-<ul class="users">
-  <% @tools.each do |tool| %>
-    <li>
-      <strong> Type |   <%= tool.type %><strong> <br>
-      <strong> Model |   <%= tool.model %><strong> <br>
-      <strong> Condition |   <%= tool.condition %><strong>
-      <strong> Price |   <%= tool.point_cost %><strong> <br>
-      <strong> Availability |   <%= tool.availability %><strong> <br>
-    </li>
-  <% end %>
-</ul>

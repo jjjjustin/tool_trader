@@ -5,7 +5,7 @@ before_action :authenticate_user!
   # GET /posts
   # GET /posts.json
   def index
-    @tool = Tool.all
+    @tools = Tool.all
   end
 
   # GET /posts/1
@@ -67,7 +67,7 @@ before_action :authenticate_user!
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tool
-      @tool = Tool.find(params[:id])
+      @tool = Tool.find(params[current_user.id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
