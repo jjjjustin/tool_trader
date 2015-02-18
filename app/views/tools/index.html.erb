@@ -1,2 +1,50 @@
-<h1>Tools#index</h1>
-<p>Find me in app/views/tools/index.html.erb</p>
+
+
+
+
+<% @tool.each do |tool| %>
+  <ul class="list-group">
+    <h2><%= tool.tool_model.upcase %></h2>
+      <li class="list-group-item">
+        <div class="panel panel-default">
+          <div class="panel-heading">Category</div>
+          <div class="panel-body"><%= tool.tool_type %></div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="panel panel-default">
+          <div class="panel-heading">Model</div>
+          <div class="panel-body"><%= tool.tool_model %></div>
+        </div>
+      </li>
+      <li class="list-group-item">
+         <div class="panel panel-default">
+          <div class="panel-heading">Condition</div>
+          <div class="panel-body"><%= tool.condition %></div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="panel panel-default">
+          <div class="panel-heading">Price</div>
+          <div class="panel-body"><%= tool.point_cost %> points</div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="panel panel-default">
+          <div class="panel-heading">Available?</div>
+          <div class="panel-body"><%= "Yes" if tool.availability == true %></div>
+        </div>
+      </li>
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">Reserve</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">Watch</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">Report</button>
+    </div>
+</div>
+  </ul>
+<% end %>
