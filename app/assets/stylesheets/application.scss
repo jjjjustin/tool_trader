@@ -23,3 +23,25 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
+
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
+
+.form-actions {
+  padding: 50px;
+}
+
+input, textarea, select, .uneditable-input {
+  width: 100%;
+  margin-bottom: 15px;
+  color: black;
+  @include box_sizing;
+
+}

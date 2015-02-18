@@ -1,9 +1,12 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= simple_form_for([current_user, @tool]) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.select :priority, ['high' ,'urgent','normal','low'], prompt: "Select priority level" %>
+      <%= f.select :tool_type, ['Power saw', 'Power drill', 'Hand tool', 'MIG welder', 'Other'],
+                               prompt: "Select type of tool" %>
+      <%= f.input :tool_model, prompt: "Set your model name" %>
+      <%= f.select :condition, ['excellent', 'good', 'fair', 'bad'], prompt: "Select tool condition" %>
+      <%= f.input :point_cost, collection: 1..10, label: "Price", prompt: "Set your price" %>
+      <%= f.input :availability, inline_label: "This tool is ready to be loaned out" %>
 
 
       <div class="form-actions">
