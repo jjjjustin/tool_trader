@@ -38,3 +38,12 @@
 </div>
   </ul>
 <% end %>
+<%= paginate @tools %>
+<%= page_entries_info @tools %>
+
+<p>
+  Download tables as:
+  <%= link_to "CSV", user_tools_path(format: "csv") %> |
+  <%= link_to "HTML", user_tools_path %> |
+  <%= link_to "PDF", user_tools_path(format: "pdf") %>
+</p>

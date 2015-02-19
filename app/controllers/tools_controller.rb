@@ -5,11 +5,13 @@ before_action :authenticate_user!
   # GET /posts
   # GET /posts.json
   def index
-    @tools = Tool.all
+    @tools = Tool.page(params[:page]).per(5)
+    respond_to do |format|
+        format.html
+        format.csv { send_data @tools.to_csv}
+    end
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
   def show
   end
 
